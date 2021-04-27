@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "+GN7e/OQI1xoeXsgvrKvRQFQyqA7k3yVtdxRnefBWavOsRwvvSsjt+w7toWzSI7Ydnpt2vbPPMyoAu+m7MJ7Zg==",
+  "dgSpecHash": "8IreTLbBgtgonl7pwuBQXoHGJqHGt4nqfsRlTl6ePDfXQ9pVElCCx9YZ6vl9EoEbHpVllvBjNzx7S9YeDE6znw==",
   "success": true,
-  "projectFilePath": "C:\\Proyectos.NET\\Kairos\\Kairos.iOS\\Kairos.iOS.csproj",
+  "projectFilePath": "C:\\Proyectos.NET\\Kairos\\Proyecto_Kairos\\Kairos.iOS\\Kairos.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\moise\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\moise\\.nuget\\packages\\xamarin.communitytoolkit\\1.1.0\\xamarin.communitytoolkit.1.1.0.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
   ],

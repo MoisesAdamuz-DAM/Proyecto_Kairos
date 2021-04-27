@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Proyectos.NET\\Kairos\\Kairos.Android\\Kairos.Android.csproj": {}
+    "C:\\Proyectos.NET\\Kairos\\Proyecto_Kairos\\Kairos.Android\\Kairos.Android.csproj": {}
   },
   "projects": {
-    "C:\\Proyectos.NET\\Kairos\\Kairos.Android\\Kairos.Android.csproj": {
+    "C:\\Proyectos.NET\\Kairos\\Proyecto_Kairos\\Kairos.Android\\Kairos.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Proyectos.NET\\Kairos\\Kairos.Android\\Kairos.Android.csproj",
+        "projectUniqueName": "C:\\Proyectos.NET\\Kairos\\Proyecto_Kairos\\Kairos.Android\\Kairos.Android.csproj",
         "projectName": "Kairos.Android",
-        "projectPath": "C:\\Proyectos.NET\\Kairos\\Kairos.Android\\Kairos.Android.csproj",
+        "projectPath": "C:\\Proyectos.NET\\Kairos\\Proyecto_Kairos\\Kairos.Android\\Kairos.Android.csproj",
         "packagesPath": "C:\\Users\\moise\\.nuget\\packages\\",
-        "outputPath": "C:\\Proyectos.NET\\Kairos\\Kairos.Android\\obj\\",
+        "outputPath": "C:\\Proyectos.NET\\Kairos\\Proyecto_Kairos\\Kairos.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -34,8 +34,8 @@
         "frameworks": {
           "monoandroid11.0": {
             "projectReferences": {
-              "C:\\Proyectos.NET\\Kairos\\Kairos\\Kairos.csproj": {
-                "projectPath": "C:\\Proyectos.NET\\Kairos\\Kairos\\Kairos.csproj"
+              "C:\\Proyectos.NET\\Kairos\\Proyecto_Kairos\\Kairos\\Kairos.csproj": {
+                "projectPath": "C:\\Proyectos.NET\\Kairos\\Proyecto_Kairos\\Kairos\\Kairos.csproj"
               }
             }
           }
@@ -44,6 +44,10 @@
       "frameworks": {
         "monoandroid11.0": {
           "dependencies": {
+            "Xamarin.CommunityToolkit": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.6.1, )"
@@ -56,14 +60,14 @@
         }
       }
     },
-    "C:\\Proyectos.NET\\Kairos\\Kairos\\Kairos.csproj": {
+    "C:\\Proyectos.NET\\Kairos\\Proyecto_Kairos\\Kairos\\Kairos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Proyectos.NET\\Kairos\\Kairos\\Kairos.csproj",
+        "projectUniqueName": "C:\\Proyectos.NET\\Kairos\\Proyecto_Kairos\\Kairos\\Kairos.csproj",
         "projectName": "Kairos",
-        "projectPath": "C:\\Proyectos.NET\\Kairos\\Kairos\\Kairos.csproj",
+        "projectPath": "C:\\Proyectos.NET\\Kairos\\Proyecto_Kairos\\Kairos\\Kairos.csproj",
         "packagesPath": "C:\\Users\\moise\\.nuget\\packages\\",
-        "outputPath": "C:\\Proyectos.NET\\Kairos\\Kairos\\obj\\",
+        "outputPath": "C:\\Proyectos.NET\\Kairos\\Proyecto_Kairos\\Kairos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -103,6 +107,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Xamarin.CommunityToolkit": {
+              "target": "Package",
+              "version": "[1.1.0, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",

@@ -1,16 +1,10 @@
-﻿using Kairos.Services;
-using Kairos.Views;
-using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace Kairos {
     public partial class App : Application {
 
         public App() {
             InitializeComponent();
-
-            DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
 

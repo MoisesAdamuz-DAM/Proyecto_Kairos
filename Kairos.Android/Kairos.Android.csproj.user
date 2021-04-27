@@ -3,5 +3,6 @@
   <PropertyGroup>
     <SelectedDevice>Samsung SM-A310F</SelectedDevice>
     <ActiveDebugProfile>Samsung SM-A310F</ActiveDebugProfile>
+    <DefaultDevice>nexus_5x_pie_9_0_-_api_28</DefaultDevice>
   </PropertyGroup>
 </Project>

@@ -4,6 +4,8 @@
     Visual="Material"
     x:Class="Kairos.Paginas.IniciarSesion"
     xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:fuentes="clr-namespace:Kairos.Recursos"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
 
@@ -22,16 +24,10 @@
                     TextColor="{StaticResource PrimarioC}"/>
 
                 <!-- Logo -->
-                <Image  
+                <ff:CachedImage 
                     HeightRequest="100"
                     Margin="0,20,0,30" 
-                    Source="logo_ppal.png" />
-
-                <!-- Eslogan -->
-                <Image  
-                    HeightRequest="15"  
-                    Margin="0,0,0,0" 
-                    Source="accuracy.png" />
+                    Source="kairos.png" />
 
                 <StackLayout 
                     Padding="0, 20"
@@ -48,6 +44,24 @@
                             Placeholder="Contraseña" 
                             PlaceholderColor="Purple"
                             TextColor="{StaticResource PrimarioB}"/>
+
+                        <!-- Mostrar clave -->
+                        <ImageButton
+                            BackgroundColor="White"
+                            CornerRadius="25"
+                            HorizontalOptions="End"
+                            Margin="0, 0, 0, 6"
+                            Padding="6"
+                            VerticalOptions="Center">
+
+                            <ImageButton.Source>
+                                <FontImageSource
+                                    Color="{StaticResource PrimarioB}"
+                                    FontFamily="FA-S"
+                                    Size="Large"
+                                    Glyph="{x:Static fuentes:FontAwesome.Eye}" />
+                            </ImageButton.Source>
+                        </ImageButton>
                     </Grid>
 
                     <!-- Mantener sesión -->

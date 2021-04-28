@@ -32,3 +32,18 @@ C:\Proyectos.NET\Kairos\Proyecto_Kairos\Kairos\obj\Debug\netstandard2.0\Kairos.d
 C:\Proyectos.NET\Kairos\Proyecto_Kairos\Kairos\obj\Debug\netstandard2.0\ref\Kairos.dll
 C:\Proyectos.NET\Kairos\Proyecto_Kairos\Kairos\obj\Debug\netstandard2.0\Kairos.pdb
 C:\Proyectos.NET\Kairos\Proyecto_Kairos\Kairos\obj\Debug\netstandard2.0\Paginas\IniciarSesion.xaml.g.cs
+C:\Users\maf\Desktop\Nueva carpeta\Proyecto_Kairos\Kairos\bin\Debug\netstandard2.0\Kairos.deps.json
+C:\Users\maf\Desktop\Nueva carpeta\Proyecto_Kairos\Kairos\bin\Debug\netstandard2.0\Kairos.dll
+C:\Users\maf\Desktop\Nueva carpeta\Proyecto_Kairos\Kairos\bin\Debug\netstandard2.0\ref\Kairos.dll
+C:\Users\maf\Desktop\Nueva carpeta\Proyecto_Kairos\Kairos\bin\Debug\netstandard2.0\Kairos.pdb
+C:\Users\maf\Desktop\Nueva carpeta\Proyecto_Kairos\Kairos\obj\Debug\netstandard2.0\Kairos.csprojAssemblyReference.cache
+C:\Users\maf\Desktop\Nueva carpeta\Proyecto_Kairos\Kairos\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\maf\Desktop\Nueva carpeta\Proyecto_Kairos\Kairos\obj\Debug\netstandard2.0\AppShell.xaml.g.cs
+C:\Users\maf\Desktop\Nueva carpeta\Proyecto_Kairos\Kairos\obj\Debug\netstandard2.0\Paginas\IniciarSesion.xaml.g.cs
+C:\Users\maf\Desktop\Nueva carpeta\Proyecto_Kairos\Kairos\obj\Debug\netstandard2.0\Kairos.AssemblyInfoInputs.cache
+C:\Users\maf\Desktop\Nueva carpeta\Proyecto_Kairos\Kairos\obj\Debug\netstandard2.0\Kairos.AssemblyInfo.cs
+C:\Users\maf\Desktop\Nueva carpeta\Proyecto_Kairos\Kairos\obj\Debug\netstandard2.0\Kairos.csproj.CoreCompileInputs.cache
+C:\Users\maf\Desktop\Nueva carpeta\Proyecto_Kairos\Kairos\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\maf\Desktop\Nueva carpeta\Proyecto_Kairos\Kairos\obj\Debug\netstandard2.0\Kairos.dll
+C:\Users\maf\Desktop\Nueva carpeta\Proyecto_Kairos\Kairos\obj\Debug\netstandard2.0\ref\Kairos.dll
+C:\Users\maf\Desktop\Nueva carpeta\Proyecto_Kairos\Kairos\obj\Debug\netstandard2.0\Kairos.pdb

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Proyectos.NET\\Kairos\\Proyecto_Kairos\\Kairos.iOS\\Kairos.iOS.csproj": {}
+    "C:\\Users\\maf\\Desktop\\Nueva carpeta\\Proyecto_Kairos\\Kairos.iOS\\Kairos.iOS.csproj": {}
   },
   "projects": {
-    "C:\\Proyectos.NET\\Kairos\\Proyecto_Kairos\\Kairos.iOS\\Kairos.iOS.csproj": {
+    "C:\\Users\\maf\\Desktop\\Nueva carpeta\\Proyecto_Kairos\\Kairos.iOS\\Kairos.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Proyectos.NET\\Kairos\\Proyecto_Kairos\\Kairos.iOS\\Kairos.iOS.csproj",
+        "projectUniqueName": "C:\\Users\\maf\\Desktop\\Nueva carpeta\\Proyecto_Kairos\\Kairos.iOS\\Kairos.iOS.csproj",
         "projectName": "Kairos.iOS",
-        "projectPath": "C:\\Proyectos.NET\\Kairos\\Proyecto_Kairos\\Kairos.iOS\\Kairos.iOS.csproj",
-        "packagesPath": "C:\\Users\\moise\\.nuget\\packages\\",
-        "outputPath": "C:\\Proyectos.NET\\Kairos\\Proyecto_Kairos\\Kairos.iOS\\obj\\",
+        "projectPath": "C:\\Users\\maf\\Desktop\\Nueva carpeta\\Proyecto_Kairos\\Kairos.iOS\\Kairos.iOS.csproj",
+        "packagesPath": "C:\\Users\\maf\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\maf\\Desktop\\Nueva carpeta\\Proyecto_Kairos\\Kairos.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -19,7 +19,7 @@
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\moise\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\maf\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -34,8 +34,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "C:\\Proyectos.NET\\Kairos\\Proyecto_Kairos\\Kairos\\Kairos.csproj": {
-                "projectPath": "C:\\Proyectos.NET\\Kairos\\Proyecto_Kairos\\Kairos\\Kairos.csproj"
+              "C:\\Users\\maf\\Desktop\\Nueva carpeta\\Proyecto_Kairos\\Kairos\\Kairos.csproj": {
+                "projectPath": "C:\\Users\\maf\\Desktop\\Nueva carpeta\\Proyecto_Kairos\\Kairos\\Kairos.csproj"
               }
             }
           }
@@ -51,6 +51,14 @@
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.6.1, )"
+            },
+            "Xamarin.FFImageLoading": {
+              "target": "Package",
+              "version": "[2.4.11.982, )"
+            },
+            "Xamarin.FFImageLoading.Forms": {
+              "target": "Package",
+              "version": "[2.4.11.982, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
@@ -71,21 +79,21 @@
         }
       }
     },
-    "C:\\Proyectos.NET\\Kairos\\Proyecto_Kairos\\Kairos\\Kairos.csproj": {
+    "C:\\Users\\maf\\Desktop\\Nueva carpeta\\Proyecto_Kairos\\Kairos\\Kairos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Proyectos.NET\\Kairos\\Proyecto_Kairos\\Kairos\\Kairos.csproj",
+        "projectUniqueName": "C:\\Users\\maf\\Desktop\\Nueva carpeta\\Proyecto_Kairos\\Kairos\\Kairos.csproj",
         "projectName": "Kairos",
-        "projectPath": "C:\\Proyectos.NET\\Kairos\\Proyecto_Kairos\\Kairos\\Kairos.csproj",
-        "packagesPath": "C:\\Users\\moise\\.nuget\\packages\\",
-        "outputPath": "C:\\Proyectos.NET\\Kairos\\Proyecto_Kairos\\Kairos\\obj\\",
+        "projectPath": "C:\\Users\\maf\\Desktop\\Nueva carpeta\\Proyecto_Kairos\\Kairos\\Kairos.csproj",
+        "packagesPath": "C:\\Users\\maf\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\maf\\Desktop\\Nueva carpeta\\Proyecto_Kairos\\Kairos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\moise\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\maf\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -126,6 +134,14 @@
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.6.1, )"
+            },
+            "Xamarin.FFImageLoading": {
+              "target": "Package",
+              "version": "[2.4.11.982, )"
+            },
+            "Xamarin.FFImageLoading.Forms": {
+              "target": "Package",
+              "version": "[2.4.11.982, )"
             },
             "Xamarin.Forms": {
               "target": "Package",

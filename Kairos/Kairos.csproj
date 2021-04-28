@@ -6,13 +6,29 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.CommunityToolkit" Version="1.1.0" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />  
-    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <Compile Remove="VMs\**" />
+    <EmbeddedResource Remove="VMs\**" />
+    <None Remove="VMs\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="VMs\" />
+    <None Remove="Recursos\Fuentes\FA5-Brands.otf" />
+    <None Remove="Recursos\Fuentes\FA5-Regular.otf" />
+    <None Remove="Recursos\Fuentes\FA5-Solid.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Recursos\Fuentes\FA5-Brands.otf" />
+    <EmbeddedResource Include="Recursos\Fuentes\FA5-Regular.otf" />
+    <EmbeddedResource Include="Recursos\Fuentes\FA5-Solid.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="1.1.0" />
+    <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
 
   <ItemGroup>

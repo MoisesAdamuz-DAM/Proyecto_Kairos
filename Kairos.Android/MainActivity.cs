@@ -4,6 +4,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using System.Threading.Tasks;
 
 namespace Kairos.Droid
 {
@@ -16,7 +17,11 @@ namespace Kairos.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true); // Inicialización cacheador de imágenes.
+            FFImageLoading.Forms.Platform.CachedImageRenderer.InitImageViewHandler();
             LoadApplication(new App());
+
+            DefinirManejadoresExcepciones();
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
@@ -24,5 +29,31 @@ namespace Kairos.Droid
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
+        private void DefinirManejadoresExcepciones() {
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomainOnUnhandledException;
+            TaskScheduler.UnobservedTaskException += TaskSchedulerOnUnobservedTaskException;
+            AndroidEnvironment.UnhandledExceptionRaiser += AndroidEnvironmentOnUnhandledException;
+        }
+
+        private void CurrentDomainOnUnhandledException(object sender, UnhandledExceptionEventArgs e) {
+            Exception ex = (Exception)e.ExceptionObject;
+            System.Diagnostics.Debug.WriteLine($"EXCEPCIÓN > CurrentDomainOnUnhandledException: {ex.Message}" +
+                $"{(ex.InnerException != null ? " " + ex.InnerException.Message : "")}");
+            System.Diagnostics.Debug.WriteLine($"TRAZA > CurrentDomainOnUnhandledException:\n{ex.StackTrace}");
+        }
+
+        private void TaskSchedulerOnUnobservedTaskException(object sender, UnobservedTaskExceptionEventArgs e) {
+            System.Diagnostics.Debug.WriteLine($"EXCEPCIÓN > TaskSchedulerOnUnobservedTaskException: {e.Exception.Message}" +
+                $"{(e.Exception.InnerException != null ? " " + e.Exception.InnerException.Message : "")}");
+            System.Diagnostics.Debug.WriteLine($"TRAZA > TaskSchedulerOnUnobservedTaskException:\n{e.Exception.StackTrace}");
+        }
+
+        private void AndroidEnvironmentOnUnhandledException(object sender, RaiseThrowableEventArgs e) {
+            System.Diagnostics.Debug.WriteLine($"EXCEPCIÓN > AndroidEnvironmentOnUnhandledException: {e.Exception.Message}" +
+                $"{(e.Exception.InnerException != null ? " " + e.Exception.InnerException.Message : "")}");
+            System.Diagnostics.Debug.WriteLine($"TRAZA > AndroidEnvironmentOnUnhandledException:\n{e.Exception.StackTrace}");
+        }
+
     }
 }

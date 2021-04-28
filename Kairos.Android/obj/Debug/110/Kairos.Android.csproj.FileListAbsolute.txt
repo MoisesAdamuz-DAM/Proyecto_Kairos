@@ -1757,3 +1757,5 @@ C:\Users\maf\Desktop\Nueva carpeta\Proyecto_Kairos\Kairos.Android\obj\Debug\110\
 C:\Users\maf\Desktop\Nueva carpeta\Proyecto_Kairos\Kairos.Android\obj\Debug\110\android\src\ffimageloading\cross\MvxCachedImageView.java
 C:\Users\maf\Desktop\Nueva carpeta\Proyecto_Kairos\Kairos.Android\obj\Debug\110\android\src\ffimageloading\views\ImageViewAsync.java
 C:\Users\maf\Desktop\Nueva carpeta\Proyecto_Kairos\Kairos.Android\obj\Debug\110\res\drawable\kairos.png
+C:\Users\maf\Desktop\Nueva carpeta\Proyecto_Kairos\Kairos.Android\obj\Debug\110\res\drawable\splash_screen.xml
+C:\Users\maf\Desktop\Nueva carpeta\Proyecto_Kairos\Kairos.Android\obj\Debug\110\android\src\crc64f367656ab3942218\SplashActivity.java

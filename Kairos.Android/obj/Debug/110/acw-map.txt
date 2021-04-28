@@ -1,6 +1,9 @@
 Kairos.Droid.MainActivity, Kairos.Android;crc64f367656ab3942218.MainActivity
 Kairos.Droid.MainActivity;crc64f367656ab3942218.MainActivity
 kairos.droid.MainActivity;crc64f367656ab3942218.MainActivity
+Kairos.Droid.SplashActivity, Kairos.Android;crc64f367656ab3942218.SplashActivity
+Kairos.Droid.SplashActivity;crc64f367656ab3942218.SplashActivity
+kairos.droid.SplashActivity;crc64f367656ab3942218.SplashActivity
 FFImageLoading.Forms.Platform.CachedImageRenderer, FFImageLoading.Forms.Platform;crc6414fa209700c2b9f3.CachedImageRenderer
 FFImageLoading.Forms.Platform.CachedImageRenderer;crc6414fa209700c2b9f3.CachedImageRenderer
 ffimageloading.forms.platform.CachedImageRenderer;crc6414fa209700c2b9f3.CachedImageRenderer

@@ -11,7 +11,8 @@
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <application android:label="Kairos.Android" android:theme="@style/MainTheme" android:name="android.app.Application" android:allowBackup="true" android:icon="@mipmap/icon" android:debuggable="true" android:extractNativeLibs="true">
-    <activity android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:icon="@mipmap/icon" android:label="Kairos" android:theme="@style/MainTheme" android:name="crc64f367656ab3942218.MainActivity">
+    <activity android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:icon="@mipmap/icon" android:label="Kairos" android:theme="@style/MainTheme" android:name="crc64f367656ab3942218.MainActivity" />
+    <activity android:label="KairosApp" android:noHistory="true" android:theme="@style/MyTheme.Splash" android:name="crc64f367656ab3942218.SplashActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

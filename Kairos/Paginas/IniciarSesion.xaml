@@ -11,39 +11,34 @@
 
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout 
-                Padding="20"
-                Spacing="10">
-                <!-- Version -->
-                <Label 
-                    FontSize="Micro" 
-                    HorizontalOptions="End"
-                    Margin="0, 0, 40, 0"
-                    Opacity=".5" 
-                    Text="Versión 2.0.0 122" 
-                    TextColor="{StaticResource PrimarioC}"/>
+            <StackLayout Orientation="Vertical" 
+                     Padding="20"
+                     Spacing="15">
 
-                <!-- Logo -->
-                <ff:CachedImage 
-                    HeightRequest="100"
-                    Margin="0,20,0,30" 
-                    Source="kairos.png" />
+                <!--Logo-->
+                <ff:CachedImage
+                 BitmapOptimizations="True"
+                 HeightRequest="120"
+                 Margin="0,30,0,30"
+                 Source="kairos.png"/>
 
                 <StackLayout 
-                    Padding="0, 20"
-                    Spacing="10">
+                Spacing="10">
 
-                    <!-- Inciales -->
+                    <!-- Usuario -->
                     <Entry 
-                    Placeholder="Iniciales" 
-                    PlaceholderColor="Purple"
-                    TextColor="{StaticResource PrimarioB}"/>
+                Placeholder="Usuario"
+                PlaceholderColor="{StaticResource PrimarioA}"
+                TextColor="{StaticResource PrimarioB}"/>
 
                     <Grid>
-                        <Entry 
-                            Placeholder="Contraseña" 
-                            PlaceholderColor="Purple"
-                            TextColor="{StaticResource PrimarioB}"/>
+                        <!-- Clave -->
+                        <Entry
+                            
+                            Placeholder="Contraseña"
+                            PlaceholderColor="{StaticResource PrimarioA}"
+                            IsPassword="True"
+                            TextColor="{StaticResource PrimarioB}" />
 
                         <!-- Mostrar clave -->
                         <ImageButton
@@ -64,29 +59,27 @@
                         </ImageButton>
                     </Grid>
 
-                    <!-- Mantener sesión -->
-                    <StackLayout 
-                    Orientation="Horizontal"
-                    Spacing="0">
+                    <StackLayout
+                Orientation="Horizontal"
+                Spacing="0">
 
-                        <CheckBox 
-                        Color="Blue"/>
+                        <CheckBox
+                    Color="{StaticResource PrimarioB}"/>
 
-                        <Label 
-                        FontSize="Default"
-                        Margin="0,6,0,0" 
-                        Text="Mantener sesión"
-                        TextColor="{StaticResource PrimarioB}" />
+                        <Label
+                    FontSize="Default"
+                    Margin="0,6,0,0"
+                    Text="Mantener sesión inciada"
+                    TextColor="{StaticResource PrimarioB}"/>
                     </StackLayout>
 
-                    <!-- Inciar sesión -->
+                    <!-- Iniciar sesión -->
                     <Button 
-                    BackgroundColor="{StaticResource PrimarioB}"
-                    CornerRadius="20"
-                    FontSize="Subtitle"
-                    Margin="0, 10, 0, 0"
-                    Text="Iniciar sesión"/>
-
+                BackgroundColor="{StaticResource PrimarioB}"
+                CornerRadius="20"
+                FontSize="Subtitle"
+                Margin="0, 10, 0, 0"
+                Text="iniciar sesión"/>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

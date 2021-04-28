@@ -6,12 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="VMs\**" />
-    <EmbeddedResource Remove="VMs\**" />
-    <None Remove="VMs\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="Recursos\Fuentes\FA5-Brands.otf" />
     <None Remove="Recursos\Fuentes\FA5-Regular.otf" />
     <None Remove="Recursos\Fuentes\FA5-Solid.otf" />
@@ -35,5 +29,9 @@
     <EmbeddedResource Update="Paginas\IniciarSesion.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="VMs\" />
   </ItemGroup>
 </Project>

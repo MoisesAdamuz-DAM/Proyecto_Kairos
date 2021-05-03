@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
-       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:paginas="clr-namespace:Kairos.Paginas"
-       Title="Kairos"
-       x:Class="Kairos.AppShell">
-
- 
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Kairos.AppShell"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:paginas="clr-namespace:Kairos.Paginas"
+    Title="Kairos">
 
     <Shell.Resources>
         <ResourceDictionary>
@@ -16,17 +15,20 @@
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
                 <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
                 <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource PrimarioA}" />
-                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
-                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
-                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+                <Setter Property="Shell.TabBarForegroundColor" Value="White" />
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarTitleColor" Value="White" />
             </Style>
-            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
-            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+            <Style BasedOn="{StaticResource BaseStyle}" TargetType="TabBar" />
+            <Style BasedOn="{StaticResource BaseStyle}" TargetType="FlyoutItem" />
 
             <Style Class="FlyoutItemLabelStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="TextColor" Value="White" />
             </Style>
-            <Style Class="FlyoutItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
+            <Style
+                ApplyToDerivedTypes="True"
+                Class="FlyoutItemLayoutStyle"
+                TargetType="Layout">
                 <Setter Property="VisualStateManager.VisualStateGroups">
                     <VisualStateGroupList>
                         <VisualStateGroup x:Name="CommonStates">
@@ -46,7 +48,10 @@
                 </Setter>
             </Style>
 
-            <Style Class="MenuItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
+            <Style
+                ApplyToDerivedTypes="True"
+                Class="MenuItemLayoutStyle"
+                TargetType="Layout">
                 <Setter Property="VisualStateManager.VisualStateGroups">
                     <VisualStateGroupList>
                         <VisualStateGroup x:Name="CommonStates">
@@ -61,18 +66,26 @@
             </Style>
         </ResourceDictionary>
     </Shell.Resources>
-    <!--Inicio sesión-->
-    <ShellContent 
-        ContentTemplate="{DataTemplate paginas:IniciarSesion}" 
-        Route="iniciarsesion" 
+    <!--  Inicio sesión  -->
+    <ShellContent
+        ContentTemplate="{DataTemplate paginas:IniciarSesion}"
+        Route="iniciarsesion"
         Shell.FlyoutBehavior="Disabled"
-        Shell.NavBarIsVisible="False" 
-        Shell.PresentationMode="ModalAnimated" 
-        Shell.TabBarIsVisible="False"/>
+        Shell.NavBarIsVisible="False"
+        Shell.PresentationMode="ModalAnimated"
+        Shell.TabBarIsVisible="False" />
 
-    <ShellContent 
-        Route="inicio"
-        ContentTemplate="{DataTemplate paginas:Inicio}"/>
+
+    <!--  Opciones de menu  -->
+    <!--  Pagina de Inicio  -->
+    <FlyoutItem Title="Inicio" Icon="kairos.png">
+        <ShellContent ContentTemplate="{DataTemplate paginas:Inicio}" Route="inicio" />
+    </FlyoutItem>
+
+    <!--  Pagina de Ropa  -->
+    <FlyoutItem Title="Ropa" Icon="kairos.png">
+        <ShellContent ContentTemplate="{DataTemplate paginas:RopaVista}" Route="ropa" />
+    </FlyoutItem>
 
 
 </Shell>

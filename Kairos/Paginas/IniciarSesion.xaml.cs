@@ -1,4 +1,5 @@
 ﻿
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,6 +8,11 @@ namespace Kairos.Paginas {
     public partial class IniciarSesion : ContentPage {
         public IniciarSesion() {
             InitializeComponent();
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e) {
+
+            await Shell.Current.GoToAsync("//inicio");
         }
     }
 }

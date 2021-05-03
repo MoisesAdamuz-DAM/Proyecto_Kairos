@@ -1,89 +1,86 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage 
-    BackgroundColor="White"
-    Visual="Material"
+<ContentPage
     x:Class="Kairos.Paginas.IniciarSesion"
     xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:fuentes="clr-namespace:Kairos.Recursos"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Kairos.VMs"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-    xmlns:local="clr-namespace:Kairos.VMs">
+    BackgroundColor="White"
+    Visual="Material">
 
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Orientation="Vertical" 
-                     Padding="20"
-                     Spacing="15">
+            <StackLayout
+                Padding="20"
+                Orientation="Vertical"
+                Spacing="15">
 
-                <!--Logo-->
+                <!--  Logo  -->
                 <ff:CachedImage
-                 BitmapOptimizations="True"
-                 HeightRequest="120"
-                 Margin="0,30,0,30"
-                 Source="kairos.png"/>
+                    Margin="0,30,0,30"
+                    BitmapOptimizations="True"
+                    HeightRequest="120"
+                    Source="kairos.png" />
 
-                <StackLayout 
-                Spacing="10">
+                <StackLayout Spacing="10">
 
-                    <!-- Usuario -->
-                    <Entry 
-                Placeholder="Usuario"
-                PlaceholderColor="{StaticResource PrimarioA}"
-                TextColor="{StaticResource PrimarioB}"/>
+                    <!--  Usuario  -->
+                    <Entry
+                        Placeholder="Usuario"
+                        PlaceholderColor="{StaticResource PrimarioA}"
+                        TextColor="{StaticResource PrimarioB}" />
 
                     <Grid>
-                        <!-- Clave -->
+                        <!--  Clave  -->
                         <Entry
-                            
+                            IsPassword="{Binding Source={x:Reference ShowPasswordActualTrigger}, Path=HidePassword}"
                             Placeholder="Contraseña"
                             PlaceholderColor="{StaticResource PrimarioA}"
-                            IsPassword="{Binding Source={x:Reference ShowPasswordActualTrigger}, Path=HidePassword}"
                             TextColor="{StaticResource PrimarioB}" />
 
-                        <!-- Mostrar clave -->
+                        <!--  Mostrar clave  -->
                         <ImageButton
+                            Margin="0,0,0,9"
+                            Padding="6"
                             BackgroundColor="White"
                             CornerRadius="25"
+                            HeightRequest="40"
                             HorizontalOptions="End"
-                            Margin="0, 0, 0, 6"
-                            Padding="6"
                             Source="ic_eye_hide"
                             VerticalOptions="Center">
 
                             <ImageButton.Triggers>
                                 <EventTrigger Event="Clicked">
-                                <local:IniciarSesionVM
-                                    ShowIcon="ic_eye"
-                                    HideIcon="ic_eye_hide"
-                                    x:Name="ShowPasswordActualTrigger"
-                                   />
+                                    <local:IniciarSesionVM
+                                        x:Name="ShowPasswordActualTrigger"
+                                        HideIcon="ic_eye_hide"
+                                        ShowIcon="ic_eye" />
                                 </EventTrigger>
                             </ImageButton.Triggers>
                         </ImageButton>
                     </Grid>
 
-                    <StackLayout
-                Orientation="Horizontal"
-                Spacing="0">
+                    <StackLayout Orientation="Horizontal" Spacing="0">
 
-                        <CheckBox
-                    Color="{StaticResource PrimarioB}"/>
+                        <CheckBox Color="{StaticResource PrimarioB}" />
 
                         <Label
-                    FontSize="Default"
-                    Margin="0,6,0,0"
-                    Text="Mantener sesión inciada"
-                    TextColor="{StaticResource PrimarioB}"/>
+                            Margin="0,6,0,0"
+                            FontSize="Default"
+                            Text="Mantener sesión inciada"
+                            TextColor="{StaticResource PrimarioB}" />
                     </StackLayout>
 
-                    <!-- Iniciar sesión -->
-                    <Button 
-                BackgroundColor="{StaticResource PrimarioB}"
-                CornerRadius="20"
-                FontSize="Subtitle"
-                Margin="0, 10, 0, 0"
-                Text="iniciar sesión"/>
+                    <!--  Iniciar sesión  -->
+                    <Button
+                        Margin="0,10,0,0"
+                        BackgroundColor="{StaticResource PrimarioB}"
+                        Clicked="Button_Clicked"
+                        CornerRadius="20"
+                        FontSize="Subtitle"
+                        Text="iniciar sesión" />
                 </StackLayout>
             </StackLayout>
         </ScrollView>

@@ -62,8 +62,17 @@
         </ResourceDictionary>
     </Shell.Resources>
     <!--Inicio sesión-->
-    <ShellContent ContentTemplate="{DataTemplate paginas:IniciarSesion}" Route="iniciarsesion" Shell.FlyoutBehavior="Disabled"
-                  Shell.NavBarIsVisible="False" Shell.PresentationMode="ModalAnimated" Shell.TabBarIsVisible="False"/>
+    <ShellContent 
+        ContentTemplate="{DataTemplate paginas:IniciarSesion}" 
+        Route="iniciarsesion" 
+        Shell.FlyoutBehavior="Disabled"
+        Shell.NavBarIsVisible="False" 
+        Shell.PresentationMode="ModalAnimated" 
+        Shell.TabBarIsVisible="False"/>
+
+    <ShellContent 
+        Route="inicio"
+        ContentTemplate="{DataTemplate paginas:Inicio}"/>
 
 
 </Shell>

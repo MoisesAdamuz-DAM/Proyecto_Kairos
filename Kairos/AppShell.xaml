@@ -71,6 +71,7 @@
         ContentTemplate="{DataTemplate paginas:IniciarSesion}"
         Route="iniciarsesion"
         Shell.FlyoutBehavior="Disabled"
+        Shell.FlyoutItemIsVisible="False"
         Shell.NavBarIsVisible="False"
         Shell.PresentationMode="ModalAnimated"
         Shell.TabBarIsVisible="False" />

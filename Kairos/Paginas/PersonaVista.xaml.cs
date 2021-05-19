@@ -14,9 +14,11 @@ namespace Kairos.Paginas {
     public partial class PersonaVista : ContentPage {
         public PersonaVista() {
             InitializeComponent();
-            BindingContext = new PersonaVM();
+            BindingContext = new VMs.PersonaVM();
         }
 
+
+        //Realizar Get
        private async void Button_Clicked(object sender, EventArgs e) {
 
             var request = new HttpRequestMessage();

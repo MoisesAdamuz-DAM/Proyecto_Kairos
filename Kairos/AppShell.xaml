@@ -83,9 +83,14 @@
         <ShellContent ContentTemplate="{DataTemplate paginas:Inicio}" Route="inicio" />
     </FlyoutItem>
 
-    <!--  Pagina de Ropa  -->
+    <!--  Pagina de Persona  -->
     <FlyoutItem Title="Persona" Icon="kairos.png">
-        <ShellContent ContentTemplate="{DataTemplate paginas:PersonaVista}" Route="ropa" />
+        <ShellContent ContentTemplate="{DataTemplate paginas:PersonaVista}" Route="persona" />
+    </FlyoutItem>
+
+    <!--  Pagina de Ropa  -->
+    <FlyoutItem Title="Ropa" Icon="kairos.png">
+        <ShellContent ContentTemplate="{DataTemplate paginas:RopaVista}" Route="ropa" />
     </FlyoutItem>
 
 

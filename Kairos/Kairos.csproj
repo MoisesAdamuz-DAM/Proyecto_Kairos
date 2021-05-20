@@ -28,19 +28,25 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Paginas\PersonaVista.xaml.cs">
+    <Compile Update="Paginas\Persona\PersonaVista.xaml.cs">
       <DependentUpon>PersonaVista.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Paginas\Persona\AltaPersona.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Paginas\IniciarSesion.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Paginas\Inicio.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Paginas\PersonaVista.xaml">
+    <EmbeddedResource Update="Paginas\Persona\ModificarPersona.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Paginas\Persona\PersonaVista.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Paginas\RopaVista.xaml">

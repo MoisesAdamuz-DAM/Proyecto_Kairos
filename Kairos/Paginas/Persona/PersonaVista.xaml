@@ -4,16 +4,18 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-    xmlns:local="clr-namespace:Kairos.VMs">
+    xmlns:local="clr-namespace:Kairos.VMs"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Clicked="Alta" Text="Add" />
     </ContentPage.ToolbarItems>
 
 
-
+   
     <ContentPage.Content>
-        <StackLayout Padding="10" Spacing="10">
+        <RefreshView Command="{Binding ComandoRecargarPersona}" IsRefreshing="{Binding EstaRefrescando}">
+            <StackLayout Padding="10" Spacing="10">
             <CollectionView x:Name="LV">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
@@ -47,10 +49,18 @@
                                         Text="{Binding historialPersona}" />
                                 </Grid>
                             </Frame>
+                            
+                            <!-- Pulsar en el item -->
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                            </Frame.GestureRecognizers>
+                            
                         </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </StackLayout>
+        </RefreshView>
     </ContentPage.Content>
 </ContentPage>
+    

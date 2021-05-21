@@ -28,9 +28,15 @@
 
                     <!--  Usuario  -->
                     <Entry
+                        xct:SetFocusOnEntryCompletedBehavior.NextElement="{x:Reference ENT_Clave}"
                         Placeholder="Usuario"
                         PlaceholderColor="{StaticResource PrimarioA}"
-                        TextColor="{StaticResource PrimarioB}" />
+                        Text="{Binding Iniciales}"
+                        TextColor="{StaticResource PrimarioB}">
+                        <Entry.Behaviors>
+                            <xct:EventToCommandBehavior Command="{Binding ComandoInicialesAMayusculas}" EventName="Unfocused" />
+                        </Entry.Behaviors>
+                    </Entry>
 
                     <Grid>
                         <!--  Clave  -->
@@ -38,6 +44,7 @@
                             IsPassword="{Binding Source={x:Reference ShowPasswordActualTrigger}, Path=HidePassword}"
                             Placeholder="Contraseña"
                             PlaceholderColor="{StaticResource PrimarioA}"
+                            Text="{Binding Clave, Mode=OneWayToSource}"
                             TextColor="{StaticResource PrimarioB}" />
 
                         <!--  Mostrar clave  -->
@@ -62,9 +69,11 @@
                         </ImageButton>
                     </Grid>
 
+
+                    <!--  Mantener sesión  -->
                     <StackLayout Orientation="Horizontal" Spacing="0">
 
-                        <CheckBox Color="{StaticResource PrimarioB}" />
+                        <CheckBox IsChecked="{Binding MantenerSesion, Mode=OneWayToSource}" Color="{StaticResource PrimarioB}" />
 
                         <Label
                             Margin="0,6,0,0"
@@ -78,6 +87,7 @@
                         Margin="0,10,0,0"
                         BackgroundColor="{StaticResource PrimarioB}"
                         Clicked="Button_Clicked"
+                        Command="{Binding ComandoIniciarSesion}"
                         CornerRadius="20"
                         FontSize="Subtitle"
                         Text="iniciar sesión" />

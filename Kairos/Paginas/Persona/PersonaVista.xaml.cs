@@ -9,6 +9,7 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using Kairos.Paginas.Persona;
 
 namespace Kairos.Paginas {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -34,6 +35,16 @@ namespace Kairos.Paginas {
         public async void Alta (object sender, EventArgs e) {
 
             await Navigation.PushAsync(new AltaPersona());
+        }
+
+
+        /// <summary>
+        /// Abrir el Modificar pulsando sobre item con TapGestureRecognizer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e) {
+            await Shell.Current.Navigation.PushAsync(new ModificarPersona());
         }
     }
 }

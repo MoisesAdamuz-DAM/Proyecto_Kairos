@@ -1,26 +1,19 @@
 ﻿using Kairos.Modelo;
+using Kairos.Paginas;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace Kairos.VMs {
-    public class PersonaVM {
-
-
-        public PersonaVM() {
+    public class PersonaVM : BaseVM {
 
        
-        }
+      
 
-        public async Task<T> Get<T>(string url) {
-            HttpClient client = new HttpClient();
-            var response = await client.GetAsync(url);
-            var json = await response.Content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<T>(json);
-        }
     }
 }

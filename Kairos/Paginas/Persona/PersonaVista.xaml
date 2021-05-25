@@ -14,43 +14,47 @@
 
     <ContentPage.Content>
         <StackLayout Padding="10" Spacing="10">
-            <CollectionView x:Name="LV">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Frame Padding="5">
-                            <Frame CornerRadius="10">
+            <RefreshView>
+                <ScrollView>
+                    <CollectionView x:Name="LV">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame Padding="5">
+                                    <Frame CornerRadius="10">
 
-                                <Grid
-                                    ColumnDefinitions="Auto,Auto,Auto"
-                                    HeightRequest="100"
-                                    RowDefinitions="Auto,Auto">
-                                    <Label
-                                        Grid.Row="1"
-                                        Grid.Column="1"
-                                        Text="{Binding nombrePersona}" />
-                                    <Label
-                                        Grid.Row="1"
-                                        Grid.Column="2"
-                                        Text="{Binding paisOrigen}" />
-                                    <Label
-                                        Grid.Row="1"
-                                        Grid.Column="3"
-                                        Text="{Binding ubicacionPersona}" />
-                                    <Label
-                                        Grid.Row="2"
-                                        Grid.Column="1"
-                                        Text="{Binding necesidadPersona}" />
-                                    <Label
-                                        Grid.Row="2"
-                                        Grid.Column="2"
-                                        Grid.ColumnSpan="10"
-                                        Text="{Binding historialPersona}" />
-                                </Grid>
-                            </Frame>
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                                        <Grid
+                                            ColumnDefinitions="Auto,Auto,Auto"
+                                            HeightRequest="100"
+                                            RowDefinitions="Auto,Auto">
+                                            <Label
+                                                Grid.Row="1"
+                                                Grid.Column="1"
+                                                Text="{Binding nombrePersona}" />
+                                            <Label
+                                                Grid.Row="1"
+                                                Grid.Column="2"
+                                                Text="{Binding paisOrigen}" />
+                                            <Label
+                                                Grid.Row="1"
+                                                Grid.Column="3"
+                                                Text="{Binding ubicacionPersona}" />
+                                            <Label
+                                                Grid.Row="2"
+                                                Grid.Column="1"
+                                                Text="{Binding necesidadPersona}" />
+                                            <Label
+                                                Grid.Row="2"
+                                                Grid.Column="2"
+                                                Grid.ColumnSpan="10"
+                                                Text="{Binding historialPersona}" />
+                                        </Grid>
+                                    </Frame>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </ScrollView>
+            </RefreshView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

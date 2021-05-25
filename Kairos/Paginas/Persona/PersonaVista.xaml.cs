@@ -1,14 +1,12 @@
 ﻿using Kairos.Modelo;
 using Kairos.VMs;
-using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using Xamarin.Essentials;
-using System.Net;
-using System.Net.Http;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Net.Http;
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace Kairos.Paginas {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -16,11 +14,14 @@ namespace Kairos.Paginas {
         private const string Url = "https://webapi-kairos.conveyor.cloud/api/persona";
         private readonly HttpClient client = new HttpClient();
         private ObservableCollection<PersonaM> _post;
+
         public PersonaVista() {
             InitializeComponent();
-            //BindingContext = new VMs.Ropa();
+            BindingContext = new PersonaVM();
             GetRegistration();
+
         }
+
 
         public async void GetRegistration() {
 
@@ -31,7 +32,7 @@ namespace Kairos.Paginas {
             base.OnAppearing();
         }
 
-        public async void Alta (object sender, EventArgs e) {
+        public async void Alta(object sender, EventArgs e) {
 
             await Navigation.PushAsync(new AltaPersona());
         }

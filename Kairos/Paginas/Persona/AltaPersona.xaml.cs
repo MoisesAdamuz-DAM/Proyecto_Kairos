@@ -20,12 +20,13 @@ namespace Kairos.Paginas {
         public async void btnDatos_Clicked(object sender, EventArgs e) {
 
             PersonaM mem = new PersonaM {
-
+                
                 nombrePersona = txtNombre.Text,
                 paisOrigen = txtPais.Text,
                 ubicacionPersona = txtUbicacion.Text,
                 necesidadPersona = txtNecesidad.Text,
                 historialPersona = txtHistorial.Text
+                
 
             };
 

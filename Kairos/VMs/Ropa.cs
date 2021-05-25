@@ -56,9 +56,6 @@ namespace Kairos.VMs {
 
             GetDataAsync();
             RefreshCommand = new Command(async () => await LoadPublications());
-            DeleteDataAsync();
-
-
         }
 
       
@@ -92,8 +89,8 @@ namespace Kairos.VMs {
         }
 
         private async Task LoadPublications() {
-            if (IsRefreshing) { 
-            IsRefreshing = true;
+            if (IsRefreshing == true) { 
+            //IsRefreshing = true;
             HttpClient httpClient = new HttpClient();
             var response = await httpClient.GetAsync("https://webapi-kairos.conveyor.cloud/api/persona");
             var content = await response.Content.ReadAsStringAsync();
@@ -104,21 +101,7 @@ namespace Kairos.VMs {
             }
         }
 
-        private async void DeleteDataAsync() {
-            var url = "https://webapi-kairos.conveyor.cloud/api/persona";
-            IsLoading = true;
-            HttpClient httpClient = new HttpClient();
-
-            var id = 4;
-            var uri = new Uri(string.Format(url, id));
-            var response = await httpClient.DeleteAsync(uri);
-          
-            var content = await response.Content.ReadAsStringAsync();
-            var posts = JsonConvert.DeserializeObject<List<PersonaM>>(content);
-            PostsList = new List<PersonaM>(posts);
-
-            IsLoading = false;
-
-        }
+      
+        
     }
 }

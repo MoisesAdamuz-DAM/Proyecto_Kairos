@@ -38,7 +38,7 @@ namespace Kairos.VMs {
             }
         }
 
-        public ICommand RefreshCommand { private get; set; }
+        public ICommand RefreshCommand {  get; private set; }
 
         private bool isRefreshing;
         public bool IsRefreshing {

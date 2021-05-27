@@ -13,22 +13,11 @@ using System.Collections.ObjectModel;
 namespace Kairos.Paginas {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PersonaVista : ContentPage {
-        private const string Url = "https://webapi-kairos.conveyor.cloud/api/persona";
-        private readonly HttpClient client = new HttpClient();
-        private ObservableCollection<PersonaM> _post;
+       
         public PersonaVista() {
             InitializeComponent();
             //BindingContext = new VMs.Ropa();
-            GetRegistration();
-        }
-
-        public async void GetRegistration() {
-
-            string content = await client.GetStringAsync(Url);
-            List<PersonaM> posts = JsonConvert.DeserializeObject<List<PersonaM>>(content);
-            _post = new ObservableCollection<PersonaM>(posts);
-            LV.ItemsSource = _post;
-            base.OnAppearing();
+         
         }
 
         public async void Alta (object sender, EventArgs e) {

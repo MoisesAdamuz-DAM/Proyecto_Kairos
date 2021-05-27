@@ -3,54 +3,111 @@
     x:Class="Kairos.Paginas.PersonaVista"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-    xmlns:local="clr-namespace:Kairos.VMs">
+    xmlns:dtos="clr-namespace:Kairos.Modelo"
+    xmlns:vms="clr-namespace:Kairos.VMs"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    x:DataType="vms:PersonaVM">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Clicked="Alta" Text="Add" />
     </ContentPage.ToolbarItems>
 
-
-
     <ContentPage.Content>
-        <StackLayout Padding="10" Spacing="10">
-            <CollectionView x:Name="LV">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Frame Padding="5">
-                            <Frame CornerRadius="10">
+        <StackLayout x:Name="SL_Persona">
 
-                                <Grid
-                                    ColumnDefinitions="Auto,Auto,Auto"
-                                    HeightRequest="100"
-                                    RowDefinitions="Auto,Auto">
-                                    <Label
-                                        Grid.Row="1"
-                                        Grid.Column="1"
-                                        Text="{Binding nombrePersona}" />
-                                    <Label
-                                        Grid.Row="1"
-                                        Grid.Column="2"
-                                        Text="{Binding paisOrigen}" />
-                                    <Label
-                                        Grid.Row="1"
-                                        Grid.Column="3"
-                                        Text="{Binding ubicacionPersona}" />
-                                    <Label
-                                        Grid.Row="2"
-                                        Grid.Column="1"
-                                        Text="{Binding necesidadPersona}" />
-                                    <Label
-                                        Grid.Row="2"
-                                        Grid.Column="2"
-                                        Grid.ColumnSpan="10"
-                                        Text="{Binding historialPersona}" />
-                                </Grid>
+            <!--  Loading  -->
+            <Label
+                HorizontalOptions="CenterAndExpand"
+                IsVisible="{Binding IsLoading}"
+                Text="Loading..."
+                VerticalOptions="CenterAndExpand" />
+            <ActivityIndicator
+                HorizontalOptions="CenterAndExpand"
+                IsRunning="{Binding IsLoading}"
+                IsVisible="{Binding IsLoading}"
+                VerticalOptions="CenterAndExpand"
+                Color="Blue" />
+
+            <RefreshView Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}">
+                <!--  Collection View  -->
+                <CollectionView ItemsSource="{Binding PostsList}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="5">
+                                <Frame CornerRadius="10">
+
+                                    <Grid
+                                        x:DataType="dtos:PersonaM"
+                                        xct:TouchEffect.Command="{Binding Path=BindingContext.ComandoAbrirPersona, Source={x:Reference SL_Persona}}"
+                                        xct:TouchEffect.CommandParameter="{Binding}"
+                                        ColumnDefinitions="Auto,Auto,Auto"
+                                        HeightRequest="100"
+                                        RowDefinitions="Auto,Auto">
+
+                                        <Label
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            Text="{Binding id}"
+                                            TextColor="Teal" />
+
+                                        <Label
+                                            Grid.Row="0"
+                                            Grid.Column="1"
+                                            Text="Nombre:" />
+                                        <Label
+                                            Grid.Row="0"
+                                            Grid.Column="1"
+                                            Margin="60,0,0,0"
+                                            Text="{Binding nombrePersona}"
+                                            TextColor="Black" />
+
+                                        <Label
+                                            Grid.Row="0"
+                                            Grid.Column="2"
+                                            Margin="20,0,0,0"
+                                            Text="Ubicación: " />
+
+                                        <Label
+                                            Grid.Row="0"
+                                            Grid.Column="2"
+                                            Grid.ColumnSpan="20"
+                                            Margin="95,0,0,0"
+                                            Text="{Binding ubicacionPersona}"
+                                            TextColor="Black" />
+
+
+                                        <Label
+                                            Grid.Row="1"
+                                            Grid.Column="1"
+                                            Text="Necesidad: " />
+
+                                        <Label
+                                            Grid.Row="1"
+                                            Grid.Column="1"
+                                            Margin="80,0,0,0"
+                                            Text="{Binding necesidadPersona}"
+                                            TextColor="Black" />
+
+                                        <Label
+                                            Grid.Row="2"
+                                            Grid.Column="1"
+                                            Grid.ColumnSpan="10"
+                                            Text="Historial: " />
+                                        <Label
+                                            Grid.Row="2"
+                                            Grid.Column="1"
+                                            Grid.ColumnSpan="10"
+                                            Margin="65,0,0,0"
+                                            Text="{Binding historialPersona}"
+                                            TextColor="Black" />
+
+                                    </Grid>
+                                </Frame>
                             </Frame>
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

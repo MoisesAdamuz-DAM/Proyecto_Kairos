@@ -1,40 +1,29 @@
 ﻿using Kairos.Modelo;
 using Kairos.VMs;
-using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Net.Http;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
+using System.Net;
+using System.Net.Http;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Kairos.Paginas {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PersonaVista : ContentPage {
-        private const string Url = "https://webapi-kairos.conveyor.cloud/api/persona";
-        private readonly HttpClient client = new HttpClient();
-        private ObservableCollection<PersonaM> _post;
 
-        public PersonaVista() {
+        public PersonaVista(PersonaM persona) {
             InitializeComponent();
-            BindingContext = new PersonaVM();
-            GetRegistration();
+            BindingContext = new PersonaVM(persona);
 
-        }
-
-
-        public async void GetRegistration() {
-
-            string content = await client.GetStringAsync(Url);
-            List<PersonaM> posts = JsonConvert.DeserializeObject<List<PersonaM>>(content);
-            _post = new ObservableCollection<PersonaM>(posts);
-            LV.ItemsSource = _post;
-            base.OnAppearing();
         }
 
         public async void Alta(object sender, EventArgs e) {
 
             await Navigation.PushAsync(new AltaPersona());
         }
+
     }
 }

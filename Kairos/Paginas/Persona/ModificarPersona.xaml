@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Kairos.Paginas.Persona.ModificarPersona"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <StackLayout Padding="10" Spacing="10">
+        <Entry x:Name="txtNombre" Text="{Binding PersonaM.nombrePersona}" />
+        <Entry x:Name="txtPais" Text="{Binding PersonaM.paisOrigen}" />
+        <Entry x:Name="txtUbicacion" Text="{Binding PersonaM.ubicacionPersona}" />
+        <Entry x:Name="txtNecesidad" Text="{Binding PersonaM.necesidadPersona}" />
+        <Entry x:Name="txtHistorial" Text="{Binding PersonaM.historialPersona}" />
+        <Button x:Name="btnModificar" Text="Modificar" />
+    </StackLayout>
+</ContentPage>

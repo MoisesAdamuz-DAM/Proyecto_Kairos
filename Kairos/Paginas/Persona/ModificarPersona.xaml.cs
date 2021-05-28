@@ -1,10 +1,5 @@
 ﻿using Kairos.Modelo;
-using Kairos.VMs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Kairos.VMs.Personas;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,9 +7,10 @@ using Xamarin.Forms.Xaml;
 namespace Kairos.Paginas.Persona {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ModificarPersona : ContentPage {
-        public ModificarPersona(PersonaM dto, int idPersona) {
+
+        public ModificarPersona(PersonaM item) {
             InitializeComponent();
-            BindingContext = new (dto, idPersona);
+            BindingContext = new ModificarVM(item);
         }
     }
 }

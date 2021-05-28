@@ -14,9 +14,9 @@ namespace Kairos.Paginas {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PersonaVista : ContentPage {
        
-        public PersonaVista() {
+        public PersonaVista(PersonaM persona) {
             InitializeComponent();
-            //BindingContext = new VMs.Ropa();
+            BindingContext = new PersonaVM(persona);
          
         }
 

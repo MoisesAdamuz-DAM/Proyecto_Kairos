@@ -20,8 +20,10 @@ namespace Kairos.VMs {
         //======================================================================================================================================
         // PROPIEDADES
         //======================================================================================================================================
+        private PersonaM _selectedItem;
         public ICommand RefreshCommand { get; private set; }
         public ICommand ComandoAbrirPersona => comandoAbrirPersona ??= comandoAbrirPersona = new Command<PersonaM>(async (dto) => await AbrirPersona(dto));
+        public Command<PersonaM> ItemTapped { get; }
         
       
 
@@ -68,7 +70,10 @@ namespace Kairos.VMs {
             this.persona = persona;
             GetDataAsync();
             RefreshCommand = new Command(async () => await LoadPublications());
+            ItemTapped = new Command<PersonaM>(OnItemSelected);
         }
+
+      
 
 
 
@@ -107,14 +112,31 @@ namespace Kairos.VMs {
             }
         }
 
+        public PersonaM SelectedItem {
+            get => _selectedItem;
+            set {
+                SetProperty(ref _selectedItem, value);
+                OnItemSelected(value);
+            }
+        }
+
         /// <summary>
         /// Abre ModificarPersona
         /// </summary>
         /// <param name="dto"></param>
         /// <returns></returns>
-        private async  Task AbrirPersona(PersonaM dto) {
-            await Shell.Current.Navigation.PushAsync(new ModificarPersona(dto, persona.id));
+        async void OnItemSelected(PersonaM item) {
+            if (item == null)
+                return;
+
+            // This will push the ItemDetailPage onto the navigation stack
+            await Shell.Current.Navigation.PushAsync(new ModificarPersona(item));
         }
 
+       
+
+       
+
+       
     }
 }

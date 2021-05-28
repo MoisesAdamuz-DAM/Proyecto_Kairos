@@ -1,10 +1,16 @@
-﻿using Kairos.Modelo;
+﻿using Acr.UserDialogs;
+using Kairos.Modelo;
+using Kairos.Paginas;
 using Kairos.Paginas.Persona;
-using Kairos.PopUp;
 using Newtonsoft.Json;
 using Rg.Plugins.Popup.Services;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Net.Http;
+using System.Runtime.CompilerServices;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -15,9 +21,10 @@ namespace Kairos.VMs {
         //======================================================================================================================================
         // PROPIEDADES
         //======================================================================================================================================
+        private PersonaM _selectedItem;
         public ICommand RefreshCommand { get; private set; }
-        public ICommand ComandoAbrirPersona => comandoAbrirPersona ??= comandoAbrirPersona = new Command<PersonaM>(async (dto) => await AbrirPersona(dto));
-        public ICommand TouchCommand => longTouch ??= longTouch = new Command(async () => await AbrirPopUp());
+        public Command<PersonaM> ItemTapped { get; }
+        public Command<int> LongTapped { get; }
 
 
 
@@ -52,9 +59,9 @@ namespace Kairos.VMs {
         //======================================================================================================================================
         // VARIABLES
         //======================================================================================================================================
-        private ICommand comandoAbrirPersona;
-        private ICommand longTouch;
         private readonly PersonaM persona;
+        private const string Url = "https://webapi-kairos.conveyor.cloud/api/persona";
+        private readonly HttpClient client = new HttpClient();
 
 
         //======================================================================================================================================
@@ -65,7 +72,25 @@ namespace Kairos.VMs {
             this.persona = persona;
             GetDataAsync();
             RefreshCommand = new Command(async () => await LoadPublications());
+            ItemTapped = new Command<PersonaM>(OnItemSelected);
+            LongTapped = new Command<int>(async (id) => await AbrirPopUp(id));
         }
+
+        private async Task AbrirPopUp(int id) {
+
+            bool eliminar = await UserDialogs.Instance.ConfirmAsync("Deseas eliminar esta persona?", "Aceptar", "Cancelar");
+
+            if (eliminar) {
+
+                string uri = (Url + "?id" + id);
+                HttpResponseMessage response = await client.DeleteAsync(uri);
+                await UserDialogs.Instance.ConfirmAsync("Se ha realizado la baja correctamente", "Aceptar");
+            } else {
+                await UserDialogs.Instance.ConfirmAsync("No se ha podido realizar la baja", "Aceptar");
+            }
+        }
+
+
 
 
 
@@ -104,18 +129,25 @@ namespace Kairos.VMs {
             }
         }
 
+        public PersonaM SelectedItem {
+            get => _selectedItem;
+            set {
+                SetProperty(ref _selectedItem, value);
+                OnItemSelected(value);
+            }
+        }
+
         /// <summary>
         /// Abre ModificarPersona
         /// </summary>
         /// <param name="dto"></param>
         /// <returns></returns>
-        private async Task AbrirPersona(PersonaM dto) {
-            await Shell.Current.Navigation.PushAsync(new ModificarPersona(dto, persona.id));
-        }
+        async void OnItemSelected(PersonaM item) {
+            if (item == null)
+                return;
 
-        public async Task AbrirPopUp() {
-            
+            // This will push the ItemDetailPage onto the navigation stack
+            await Shell.Current.Navigation.PushAsync(new ModificarPersona(item));
         }
-
     }
 }

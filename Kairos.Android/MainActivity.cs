@@ -5,6 +5,7 @@ using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
 using System.Threading.Tasks;
+using Acr.UserDialogs;
 
 namespace Kairos.Droid
 {
@@ -27,6 +28,7 @@ namespace Kairos.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            UserDialogs.Init(this);
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true); // Inicialización cacheador de imágenes.
             FFImageLoading.Forms.Platform.CachedImageRenderer.InitImageViewHandler();
             LoadApplication(new App());

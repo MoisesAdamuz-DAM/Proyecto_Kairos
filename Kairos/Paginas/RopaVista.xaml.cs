@@ -8,7 +8,7 @@ namespace Kairos.Paginas {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RopaVista : ContentPage {
 
-       
+
         public RopaVista() {
             InitializeComponent();
             BindingContext = new Ropa();

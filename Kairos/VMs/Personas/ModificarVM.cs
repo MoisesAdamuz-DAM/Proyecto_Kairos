@@ -1,50 +1,97 @@
 ﻿using Kairos.Modelo;
+using Kairos.Paginas.Persona;
+using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace Kairos.VMs.Personas {
-    public class ModificarVM : BaseVM{
+    [QueryProperty(nameof(ItemId), nameof(ItemId))]
+   public class ModificarVM : BaseVM {
+        private PersonaM item;
+       // public ModificarPersona modificar;
+        private string itemId;
+        private string nombre;
+        private string pais;
+        private string ubicacion;
+        private string necesidad;
+        private string historial;
+        private const string Url = "https://webapi-kairos.conveyor.cloud/api/persona";
+        private readonly HttpClient client = new HttpClient();
 
-        //======================================================================================================================================
-        // PROPIEDADES
-        //======================================================================================================================================
-        public ObservableCollection<PersonaM> Respuestas { get; set; } = new();
-        public PersonaM PersonaM { get; }
+        public int Id { get; set; }
 
-        //======================================================================================================================================
-        // VARIABLE
-        //======================================================================================================================================
-        private readonly int idUsuario;
-
-        //======================================================================================================================================
-        // CONSTRUCTOR
-        //======================================================================================================================================
-        public ModificarVM(PersonaM personaM, int idUsuario) {
-            PersonaM = personaM;
-            this.idUsuario = idUsuario;
+        public string Nombre {
+            get => nombre;
+            set => SetProperty(ref nombre, value);
+        }
+        public string Pais {
+            get => pais;
+            set => SetProperty(ref pais, value);
+        }
+        public string Ubicacion {
+            get => ubicacion;
+            set => SetProperty(ref ubicacion, value);
+        }
+        public string Necesidad {
+            get => necesidad;
+            set => SetProperty(ref necesidad, value);
+        }
+        public string Historial {
+            get => historial;
+            set => SetProperty(ref historial, value);
+        }
+        public string ItemId {
+            get { return itemId; }
+            set {
+                itemId = value;
+            }
         }
 
-        //======================================================================================================================================
-        // MÉTODOS
-        //======================================================================================================================================
-        /// <summary>
-        /// Inicializa la carga perezosa.
-        /// </summary>
-        /// <returns>Devuelve un Task.</returns>
-        public async Task Inicializador() {
-            await CargarRespuestas();
+        public Command modificarPersona { get; }
+
+        public ModificarVM(PersonaM item) {
+            LoadItemId(item);
+            //modificarPersona = new Command(async () => await PersonaModificar());
         }
 
-        /// <summary>
-        /// Carga las respuestas del Sim.
-        /// </summary>
-        /// <returns>Devuelve un Task.</returns>
-        private async Task CargarRespuestas() {
-            //List<PersonaM> respuestas = await (PersonaM.id, idUsuario);
-            //respuestas.ForEach(respuesta => Respuestas.Add(respuesta));
+      //  public async Task PersonaModificar() {
+          
+           // string uri = (Url + "?id" + Id);
+            
+           /* PersonaM mem = new PersonaM {
+                nombrePersona = txtNombre.Text,
+                paisOrigen = txtPais.Text,
+                ubicacionPersona = txtUbicacion.Text,
+                necesidadPersona = txtNecesidad.Text,
+                historialPersona = 00txtHistorial.Text
+
+            };*/
+
+           // var json = JsonConvert.SerializeObject(mem);
+            //var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+           // var response = await client.PutAsync(uri, contentJson);
+      //  }
+
+        public void LoadItemId(PersonaM item) {
+            try {
+                Id = item.id;
+                Nombre = item.nombrePersona;
+                Pais = item.paisOrigen;
+                Ubicacion = item.ubicacionPersona;
+                Necesidad = item.necesidadPersona;
+                Historial = item.historialPersona;
+
+            } catch (Exception) {
+                Debug.WriteLine("Failed to Load Item");
+            }
         }
+
+
     }
+
 }
+

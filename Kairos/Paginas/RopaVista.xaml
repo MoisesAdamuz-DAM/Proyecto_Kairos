@@ -2,7 +2,11 @@
 <ContentPage
     x:Class="Kairos.Paginas.RopaVista"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:dtos="clr-namespace:Kairos.Modelo"
+    xmlns:vms="clr-namespace:Kairos.VMs"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    x:DataType="vms:Ropa">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Clicked="Alta" Text="Add" />
@@ -33,6 +37,13 @@
                                 <Frame CornerRadius="10">
 
                                     <Grid
+                                        x:DataType="dtos:PersonaM"
+                                        xct:TouchEffect.Command="{Binding Source={RelativeSource AncestorType={x:Type vms:PersonaVM}}, Path=ItemTapped}"
+                                        xct:TouchEffect.CommandParameter="{Binding .}"
+                                        xct:TouchEffect.LongPressCommand="{Binding Source={RelativeSource AncestorType={x:Type vms:Ropa}}, Path=LongTapped}"
+                                        xct:TouchEffect.LongPressCommandParameter="{Binding id}"
+                                        xct:TouchEffect.LongPressDuration="250"
+                                        xct:TouchEffect.PressedScale="0.90"
                                         ColumnDefinitions="Auto,Auto,Auto"
                                         HeightRequest="100"
                                         RowDefinitions="Auto,Auto">

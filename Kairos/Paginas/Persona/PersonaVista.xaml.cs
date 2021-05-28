@@ -24,6 +24,5 @@ namespace Kairos.Paginas {
 
             await Navigation.PushAsync(new AltaPersona());
         }
-
     }
 }

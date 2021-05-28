@@ -38,9 +38,10 @@
 
                                     <Grid
                                         x:DataType="dtos:PersonaM"
-                                        xct:TouchEffect.Command="{Binding Path=BindingContext.ComandoAbrirPersona, Source={x:Reference SL_Persona}}"
-                                        xct:TouchEffect.CommandParameter="{Binding}"
-                                        xct:TouchEffect.LongPressCommand="{Binding TouchCommand}"
+                                        xct:TouchEffect.Command="{Binding Source={RelativeSource AncestorType={x:Type vms:PersonaVM}}, Path=ItemTapped}"
+                                        xct:TouchEffect.CommandParameter="{Binding .}"
+                                        xct:TouchEffect.LongPressCommand="{Binding Source={RelativeSource AncestorType={x:Type vms:PersonaVM}}, Path=LongTapped}"
+                                         xct:TouchEffect.LongPressCommandParameter="{Binding id}"
                                         xct:TouchEffect.LongPressDuration="250"
                                         ColumnDefinitions="Auto,Auto,Auto"
                                         HeightRequest="100"

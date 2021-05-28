@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage
+    x:Class="Kairos.PopUp.PersonaEliminar"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label
+                HorizontalOptions="CenterAndExpand"
+                Text="¿Está seguro de que desea eliminar este usuario?"
+                VerticalOptions="CenterAndExpand" />
+            <Grid ColumnDefinitions="Auto,Auto" RowDefinitions="Auto">
+                <Button
+                    Clicked="Button_Aceptar"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="Aceptar" />
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Text="Cancelar" />
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</popup:PopupPage>

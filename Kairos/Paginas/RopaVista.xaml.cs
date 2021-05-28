@@ -11,6 +11,7 @@ using Newtonsoft.Json;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Net;
+using Kairos.VMs;
 
 namespace Kairos.Paginas {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -21,7 +22,7 @@ namespace Kairos.Paginas {
         private ObservableCollection<PersonaM> _post;
         public RopaVista() {
             InitializeComponent();
-            //BindingContext = new VMs.Ropa();
+            BindingContext = new Ropa();
             
         }
 

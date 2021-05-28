@@ -2,7 +2,9 @@
 using Kairos.Modelo;
 using Kairos.Paginas;
 using Kairos.Paginas.Persona;
+using Kairos.PopUp;
 using Newtonsoft.Json;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,8 +24,8 @@ namespace Kairos.VMs {
         //======================================================================================================================================
         private PersonaM _selectedItem;
         public ICommand RefreshCommand { get; private set; }
-        public ICommand ComandoAbrirPersona => comandoAbrirPersona ??= comandoAbrirPersona = new Command<PersonaM>(async (dto) => await AbrirPersona(dto));
         public Command<PersonaM> ItemTapped { get; }
+        public Command LongTouchCommand { get; }
         
       
 
@@ -58,7 +60,6 @@ namespace Kairos.VMs {
         //======================================================================================================================================
         // VARIABLES
         //======================================================================================================================================
-        private ICommand comandoAbrirPersona;
         private readonly PersonaM persona;
 
 
@@ -71,9 +72,15 @@ namespace Kairos.VMs {
             GetDataAsync();
             RefreshCommand = new Command(async () => await LoadPublications());
             ItemTapped = new Command<PersonaM>(OnItemSelected);
+            LongTouchCommand = new Command(async () => await AbrirPopUp());
         }
 
-      
+        private async  Task AbrirPopUp() {
+
+            await PopupNavigation.Instance.PushAsync(new PersonaEliminar());
+        }
+
+
 
 
 

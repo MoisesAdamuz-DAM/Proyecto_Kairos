@@ -9,6 +9,9 @@
         <Entry x:Name="txtUbicacion" Text="{Binding Ubicacion}" />
         <Entry x:Name="txtNecesidad" Text="{Binding Necesidad}" />
         <Entry x:Name="txtHistorial" Text="{Binding Historial}" />
-        <Button x:Name="btnDatos" Text="Modificar" />
+        <Button
+            x:Name="btnDatos"
+            Clicked="btnDatos_Clicked"
+            Text="Modificar" />
     </StackLayout>
 </ContentPage>

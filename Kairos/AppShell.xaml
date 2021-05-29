@@ -85,7 +85,7 @@
 
     <!--  Pagina de Persona  -->
     <FlyoutItem Title="Persona" Icon="kairos.png">
-        <ShellContent ContentTemplate="{DataTemplate paginas:PersonaVista}" Route="persona" />
+        <ShellContent ContentTemplate="{DataTemplate paginas:RopaVista}" Route="ropa" />
     </FlyoutItem>
 
     <!--  Pagina de Ropa  -->

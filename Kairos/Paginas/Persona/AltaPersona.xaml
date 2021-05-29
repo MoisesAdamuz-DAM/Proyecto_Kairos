@@ -2,7 +2,8 @@
 <ContentPage
     x:Class="Kairos.Paginas.AltaPersona"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Alta Persona">
 
     <StackLayout Padding="10" Spacing="10">
         <Entry x:Name="txtNombre" Placeholder="Nombre" />

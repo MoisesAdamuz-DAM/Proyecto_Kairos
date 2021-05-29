@@ -1,17 +1,20 @@
-﻿using Kairos.Modelo;
+﻿using Acr.UserDialogs;
+using Kairos.Modelo;
 using Kairos.Paginas.Persona;
 using Newtonsoft.Json;
 using System;
 using System.Diagnostics;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace Kairos.VMs.Personas {
     [QueryProperty(nameof(ItemId), nameof(ItemId))]
    public class ModificarVM : BaseVM {
-        private PersonaM item;
+      
        // public ModificarPersona modificar;
         private string itemId;
         private string nombre;
@@ -51,30 +54,70 @@ namespace Kairos.VMs.Personas {
             }
         }
 
+        public ICommand UpdateCommand { get; private set; }
+
+
         public Command modificarPersona { get; }
 
         public ModificarVM(PersonaM item) {
             LoadItemId(item);
             //modificarPersona = new Command(async () => await PersonaModificar());
+            Nombre = item.nombrePersona;
+            Pais = item.paisOrigen;
+            Ubicacion = item.ubicacionPersona;
+            Necesidad = item.necesidadPersona;
+            Historial = item.historialPersona;
+            UpdateCommand = new Command(async () => await UpdateMethod());
         }
 
-      //  public async Task PersonaModificar() {
-          
-           // string uri = (Url + "?id" + Id);
-            
-           /* PersonaM mem = new PersonaM {
-                nombrePersona = txtNombre.Text,
-                paisOrigen = txtPais.Text,
-                ubicacionPersona = txtUbicacion.Text,
-                necesidadPersona = txtNecesidad.Text,
-                historialPersona = 00txtHistorial.Text
+        private async Task UpdateMethod() {
 
-            };*/
+            var person = new PersonaM {
 
-           // var json = JsonConvert.SerializeObject(mem);
-            //var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
-           // var response = await client.PutAsync(uri, contentJson);
-      //  }
+                nombrePersona = Nombre,
+                paisOrigen = Pais,
+                ubicacionPersona = Ubicacion,
+                necesidadPersona = Necesidad,
+                historialPersona = Historial
+                
+            };
+
+            string uri = "https://webapi-kairos.conveyor.cloud/api/persona"+ "/" + Id;
+            var json = JsonConvert.SerializeObject(person);
+            var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await client.PutAsync(uri, contentJson);
+
+            if (response.StatusCode == HttpStatusCode.OK) {
+
+                await UserDialogs.Instance.ConfirmAsync("", "¿Datos modificados correctamente?", "Aceptar");
+
+            } else {
+
+                await UserDialogs.Instance.ConfirmAsync("", "¿Error al modificar?", "Aceptar");
+
+            }
+        }
+
+        public ModificarVM() {
+        }
+
+        //  public async Task PersonaModificar() {
+
+        // string uri = (Url + "?id" + Id);
+
+        /* PersonaM mem = new PersonaM {
+             nombrePersona = txtNombre.Text,
+             paisOrigen = txtPais.Text,
+             ubicacionPersona = txtUbicacion.Text,
+             necesidadPersona = txtNecesidad.Text,
+             historialPersona = 00txtHistorial.Text
+
+         };*/
+
+        // var json = JsonConvert.SerializeObject(mem);
+        //var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
+        // var response = await client.PutAsync(uri, contentJson);
+        //  }
 
         public void LoadItemId(PersonaM item) {
             try {

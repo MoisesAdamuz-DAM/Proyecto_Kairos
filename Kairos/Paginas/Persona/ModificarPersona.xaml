@@ -2,13 +2,17 @@
 <ContentPage
     x:Class="Kairos.Paginas.Persona.ModificarPersona"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Modificar Persona">
     <StackLayout Padding="10" Spacing="10">
-        <Entry x:Name="txtNombre" Text="{Binding Nombre}" />
-        <Entry x:Name="txtPais" Text="{Binding Pais}" />
-        <Entry x:Name="txtUbicacion" Text="{Binding Ubicacion}" />
-        <Entry x:Name="txtNecesidad" Text="{Binding Necesidad}" />
-        <Entry x:Name="txtHistorial" Text="{Binding Historial}" />
-        <Button x:Name="btnDatos" Text="Modificar" />
+        <Entry x:Name="txtNombre" Text="{Binding Nombre, Mode=TwoWay}" />
+        <Entry x:Name="txtPais" Text="{Binding Pais, Mode=TwoWay}" />
+        <Entry x:Name="txtUbicacion" Text="{Binding Ubicacion, Mode=TwoWay}" />
+        <Entry x:Name="txtNecesidad" Text="{Binding Necesidad, Mode=TwoWay}" />
+        <Entry x:Name="txtHistorial" Text="{Binding Historial, Mode=TwoWay}" />
+        <Button
+            x:Name="btnDatos"
+            Command="{Binding UpdateCommand, Mode=TwoWay}"
+            Text="Modificar" />
     </StackLayout>
 </ContentPage>

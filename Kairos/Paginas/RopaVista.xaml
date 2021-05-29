@@ -6,6 +6,7 @@
     xmlns:dtos="clr-namespace:Kairos.Modelo"
     xmlns:vms="clr-namespace:Kairos.VMs"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    Title="Registros Persona"
     x:DataType="vms:Ropa">
 
     <ContentPage.ToolbarItems>
@@ -38,7 +39,7 @@
 
                                     <Grid
                                         x:DataType="dtos:PersonaM"
-                                        xct:TouchEffect.Command="{Binding Source={RelativeSource AncestorType={x:Type vms:PersonaVM}}, Path=ItemTapped}"
+                                        xct:TouchEffect.Command="{Binding Source={RelativeSource AncestorType={x:Type vms:Ropa}}, Path=ItemTapped}"
                                         xct:TouchEffect.CommandParameter="{Binding .}"
                                         xct:TouchEffect.LongPressCommand="{Binding Source={RelativeSource AncestorType={x:Type vms:Ropa}}, Path=LongTapped}"
                                         xct:TouchEffect.LongPressCommandParameter="{Binding id}"

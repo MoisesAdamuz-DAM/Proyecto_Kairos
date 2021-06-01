@@ -19,15 +19,15 @@
 
                 <!--  Logo  -->
                 <ff:CachedImage
-                    Margin="0,30,0,30"
                     BitmapOptimizations="True"
-                    HeightRequest="120"
-                    Source="kairos.png" />
+                    HeightRequest="250"
+                    Source="logo_Kairos.png" />
 
                 <StackLayout Spacing="10">
 
                     <!--  Usuario  -->
                     <Entry
+                        x:Name="txtNombreUsuario"
                         Placeholder="Usuario"
                         PlaceholderColor="{StaticResource PrimarioA}"
                         TextColor="{StaticResource PrimarioB}" />
@@ -35,6 +35,7 @@
                     <Grid>
                         <!--  Clave  -->
                         <Entry
+                            x:Name="txtClaveUsuario"
                             IsPassword="{Binding Source={x:Reference ShowPasswordActualTrigger}, Path=HidePassword}"
                             Placeholder="Contraseña"
                             PlaceholderColor="{StaticResource PrimarioA}"

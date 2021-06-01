@@ -13,7 +13,6 @@ namespace Kairos.Paginas {
     public partial class AltaPersona : ContentPage {
         private const string Url = "https://webapi-kairos.conveyor.cloud/api/persona";
         private readonly HttpClient client = new HttpClient();
-        private ObservableCollection<PersonaM> _post;
         public AltaPersona() {
             InitializeComponent();
         }

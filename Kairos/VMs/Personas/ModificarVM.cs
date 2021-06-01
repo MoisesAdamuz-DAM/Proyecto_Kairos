@@ -73,7 +73,7 @@ namespace Kairos.VMs.Personas {
         private async Task UpdateMethod() {
 
             var person = new PersonaM {
-
+                id = Id,
                 nombrePersona = Nombre,
                 paisOrigen = Pais,
                 ubicacionPersona = Ubicacion,
@@ -98,27 +98,7 @@ namespace Kairos.VMs.Personas {
             }
         }
 
-        public ModificarVM() {
-        }
-
-        //  public async Task PersonaModificar() {
-
-        // string uri = (Url + "?id" + Id);
-
-        /* PersonaM mem = new PersonaM {
-             nombrePersona = txtNombre.Text,
-             paisOrigen = txtPais.Text,
-             ubicacionPersona = txtUbicacion.Text,
-             necesidadPersona = txtNecesidad.Text,
-             historialPersona = 00txtHistorial.Text
-
-         };*/
-
-        // var json = JsonConvert.SerializeObject(mem);
-        //var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
-        // var response = await client.PutAsync(uri, contentJson);
-        //  }
-
+  
         public void LoadItemId(PersonaM item) {
             try {
                 Id = item.id;
@@ -132,9 +112,6 @@ namespace Kairos.VMs.Personas {
                 Debug.WriteLine("Failed to Load Item");
             }
         }
-
-
     }
-
 }
 
